@@ -46,6 +46,9 @@ public class LearnosityDataConverter implements IDataConverter {
         String[] array = dataStr.split(" -  ", -1);
         String dataRes = array[1].trim() + NEW_LINE;
 
+        // TODO: Replace "value" because it cant exists
+        dataRes = dataRes.replace("\"value\"", "\"metric_value\"");
+
         return ByteBuffer.wrap(dataRes.getBytes(StandardCharsets.UTF_8));
     }
     
